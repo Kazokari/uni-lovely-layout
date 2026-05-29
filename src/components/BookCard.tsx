@@ -25,7 +25,7 @@ export function BookCard({ book, index }: { book: Book; index?: number }) {
         <h3 className="mt-3 font-display text-xl leading-tight">
           {book.title.split(":")[0]}
           {book.title.includes(":") && (
-            <span className="text-italic-serif text-cream">:{book.title.split(":").slice(1).join(":")}</span>
+            <span className="text-italic-serif text-gradient">:{book.title.split(":").slice(1).join(":")}</span>
           )}
         </h3>
         <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{book.desc}</p>

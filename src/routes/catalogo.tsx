@@ -31,7 +31,7 @@ function Page() {
     <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
       <span className="chip">Catálogo Completo</span>
       <h1 className="mt-4 font-display text-5xl sm:text-7xl">
-        Explore <span className="text-italic-serif text-primary">todos</span>
+        Explore <span className="text-italic-serif text-gradient-warm">todos</span>
         <br />
         os <span className="text-italic-serif">livros</span>
       </h1>

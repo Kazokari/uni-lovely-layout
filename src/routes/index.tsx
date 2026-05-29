@@ -29,7 +29,7 @@ function Index() {
             <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-7xl">
               O conhecimento
               <br />
-              que <span className="text-italic-serif text-primary">impulsiona</span>
+              que <span className="text-italic-serif text-gradient-warm">impulsiona</span>
               <br />
               sua <span className="text-italic-serif">carreira</span>
             </h1>
@@ -70,7 +70,7 @@ function Index() {
           <div>
             <span className="chip"><BookOpen className="mr-1.5 h-3 w-3 text-primary" /> Coleções</span>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl">
-              Explore por <span className="text-italic-serif text-cream">coleção</span>
+              Explore por <span className="text-italic-serif text-gradient">coleção</span>
             </h2>
             <p className="mt-2 max-w-md text-sm text-muted-foreground">
               Séries cuidadosamente organizadas — do fundamento clínico à literatura sensível.
@@ -94,7 +94,7 @@ function Index() {
               </div>
               <div className="mt-10">
                 <h3 className="font-display text-2xl">
-                  {c.name.split(" ")[0]} <span className="text-italic-serif text-cream">{c.name.split(" ").slice(1).join(" ")}</span>
+                  {c.name.split(" ")[0]} <span className="text-italic-serif text-gradient">{c.name.split(" ").slice(1).join(" ")}</span>
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">{c.count} {c.count === 1 ? "livro" : "livros"}</p>
               </div>
@@ -111,7 +111,7 @@ function Index() {
             <div>
               <span className="chip">Lançamentos</span>
               <h2 className="mt-4 font-display text-4xl sm:text-5xl">
-                Novidades <span className="text-italic-serif text-primary">fresquinhas</span>
+                Novidades <span className="text-italic-serif text-gradient-warm">fresquinhas</span>
               </h2>
             </div>
             <Link to="/lancamentos" className="pill-btn-ghost hidden sm:inline-flex">Ver todos</Link>
@@ -128,7 +128,7 @@ function Index() {
           <div>
             <span className="chip">Mais Vendidos</span>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl">
-              Favoritos dos <span className="text-italic-serif text-cream">leitores</span>
+              Favoritos dos <span className="text-italic-serif text-gradient">leitores</span>
             </h2>
           </div>
         </div>
@@ -142,7 +142,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
           <span className="chip">Depoimentos</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl">
-            O que dizem os <span className="text-italic-serif text-primary">leitores</span>
+            O que dizem os <span className="text-italic-serif text-gradient-warm">leitores</span>
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
@@ -152,9 +152,9 @@ function Index() {
             ].map((t) => (
               <figure key={t.n} className="rounded-2xl border border-border bg-card/60 p-6">
                 <blockquote className="font-display text-xl leading-snug text-cream">
-                  <span className="text-italic-serif text-primary">"</span>
+                  <span className="text-italic-serif text-gradient-warm">"</span>
                   {t.q}
-                  <span className="text-italic-serif text-primary">"</span>
+                  <span className="text-italic-serif text-gradient-warm">"</span>
                 </blockquote>
                 <figcaption className="mt-6 border-t border-border/60 pt-4">
                   <p className="text-sm font-medium">{t.n}</p>

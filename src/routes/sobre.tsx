@@ -17,7 +17,7 @@ function Page() {
       <h1 className="mt-4 font-display text-5xl sm:text-7xl">
         Carlos Augusto de
         <br />
-        <span className="text-italic-serif text-primary">Oliveira Botelho</span>
+        <span className="text-italic-serif text-gradient-warm">Oliveira Botelho</span>
       </h1>
 
       <div className="mt-14 grid gap-12 md:grid-cols-[1fr_1.4fr] md:items-start">
@@ -31,7 +31,7 @@ function Page() {
         <div>
           <p className="font-display text-2xl leading-relaxed text-cream">
             Autor, pesquisador e profissional multidisciplinar com vasta experiência nas áreas de
-            <span className="text-italic-serif text-primary"> Saúde, Direito e Literatura</span>.
+            <span className="text-italic-serif text-gradient-warm"> Saúde, Direito e Literatura</span>.
           </p>
           <p className="mt-6 text-muted-foreground">
             Ao longo de sua carreira, dedicou-se à produção de conhecimento acessível e relevante,

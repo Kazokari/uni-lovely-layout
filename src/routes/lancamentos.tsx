@@ -18,7 +18,7 @@ function Page() {
     <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
       <span className="chip">Lançamentos</span>
       <h1 className="mt-4 font-display text-5xl sm:text-7xl">
-        Novidades <span className="text-italic-serif text-primary">fresquinhas</span>
+        Novidades <span className="text-italic-serif text-gradient-warm">fresquinhas</span>
         <br />
         para <span className="text-italic-serif">você</span>
       </h1>

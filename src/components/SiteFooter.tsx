@@ -6,10 +6,10 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-4">
         <div className="md:col-span-2">
           <p className="font-display text-2xl">
-            Carlos Botelho<span className="text-italic-serif text-primary">.</span>
+            Carlos Botelho<span className="text-italic-serif text-gradient-warm">.</span>
           </p>
           <p className="mt-3 max-w-sm text-sm text-muted-foreground">
-            Conhecimento que <span className="text-italic-serif text-cream">transforma</span> a prática clínica e a sensibilidade humana.
+            Conhecimento que <span className="text-italic-serif text-gradient">transforma</span> a prática clínica e a sensibilidade humana.
           </p>
         </div>
         <div>

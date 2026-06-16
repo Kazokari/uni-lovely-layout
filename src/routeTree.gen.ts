@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as LancamentosRouteImport } from './routes/lancamentos'
+import { Route as EditoraRouteImport } from './routes/editora'
 import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const SobreRoute = SobreRouteImport.update({
 const LancamentosRoute = LancamentosRouteImport.update({
   id: '/lancamentos',
   path: '/lancamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditoraRoute = EditoraRouteImport.update({
+  id: '/editora',
+  path: '/editora',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatalogoRoute = CatalogoRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/catalogo': typeof CatalogoRoute
+  '/editora': typeof EditoraRoute
   '/lancamentos': typeof LancamentosRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/catalogo': typeof CatalogoRoute
+  '/editora': typeof EditoraRoute
   '/lancamentos': typeof LancamentosRoute
   '/sobre': typeof SobreRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/catalogo': typeof CatalogoRoute
+  '/editora': typeof EditoraRoute
   '/lancamentos': typeof LancamentosRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/catalogo' | '/lancamentos' | '/sobre'
+  fullPaths: '/' | '/catalogo' | '/editora' | '/lancamentos' | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/catalogo' | '/lancamentos' | '/sobre'
-  id: '__root__' | '/' | '/catalogo' | '/lancamentos' | '/sobre'
+  to: '/' | '/catalogo' | '/editora' | '/lancamentos' | '/sobre'
+  id: '__root__' | '/' | '/catalogo' | '/editora' | '/lancamentos' | '/sobre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CatalogoRoute: typeof CatalogoRoute
+  EditoraRoute: typeof EditoraRoute
   LancamentosRoute: typeof LancamentosRoute
   SobreRoute: typeof SobreRoute
 }
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/lancamentos'
       fullPath: '/lancamentos'
       preLoaderRoute: typeof LancamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editora': {
+      id: '/editora'
+      path: '/editora'
+      fullPath: '/editora'
+      preLoaderRoute: typeof EditoraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catalogo': {
@@ -105,19 +122,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CatalogoRoute: CatalogoRoute,
+  EditoraRoute: EditoraRoute,
   LancamentosRoute: LancamentosRoute,
   SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
